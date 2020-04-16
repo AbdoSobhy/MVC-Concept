@@ -7,16 +7,13 @@
 
 import UIKit
 
+
 class ArtistsTableViewController: UITableViewController {
     let artistsData = DataLoader().artistsData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+ 
     }
 
     // MARK: - Table view data source
@@ -44,12 +41,9 @@ class ArtistsTableViewController: UITableViewController {
         cell.buttonAtrists.setTitle(name, for: .normal)
         cell.textView.text = bio
         
-
-        
-
-        
         return cell
     }
+    
     
     
     

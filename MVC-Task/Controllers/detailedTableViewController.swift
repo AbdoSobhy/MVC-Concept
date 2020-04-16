@@ -9,8 +9,8 @@
 import UIKit
 
 class detailedTableViewController: UITableViewController {
-    let artistsData = DataLoader().artistsData
     
+    let artistsData = DataLoader().jsonfile
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,25 +27,28 @@ class detailedTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // #warning Incomplete implementation, return the number of rows
-        return artistsData.count
+        return artistsData["works"].count
     }
     
 
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "cellDetails", for: indexPath) as! DetailedTableViewCell
-         
-   ////////////>>>>>>             let currentDetailedArtist = artistsData[indexPath.row]
-         
-////////////>>>>>>         let title = currentDetailedArtist.works
+//        let DetailedArtist = artistsData
+//        let currentDetailedArtist = DetailedArtist[indexPath.row]["works"]
+       let title = ""
+
+         print(title)
         
-////////////>>>>>>        let dataOfWorks = title[indexPath.row].title
+//            let title = currentDetailedArtist.works
+//            let dataOfWorks = title[indexPath.row].title
          
  //        let baseURL = ""
  //        let poster = currentArtist["poster_path"] as! String
  //        let fullURL = NSURL(string: baseURL + poster)
         
-////////////>>>>>>        cell.titleButton.setTitle(dataOfWorks, for: .normal)
+//            cell.titleButton.setTitle(dataOfWorks, for: .normal)
 //        cell.textView.text = title
          
  //        button.setTitle("Button Title",for: .normal)

@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public class DataLoader {
     
     @Published var artistsData = [ArtistsData]()
+    @Published var jsonfile = JSON()
     @Published var work = [Works]()
 
     
@@ -27,6 +29,9 @@ public class DataLoader {
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([ArtistsData].self, from: data)
                 self.artistsData = dataFromJson
+                
+                jsonfile = JSON(data)
+                
             } catch {
                 print(error)
             }
