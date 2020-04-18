@@ -12,8 +12,8 @@ import SwiftyJSON
 public class DataLoader {
     
     @Published var artistsData = [ArtistsData]()
+    @Published var works = [Works]()
     @Published var jsonfile = JSON()
-    @Published var work = [Works]()
 
     
     

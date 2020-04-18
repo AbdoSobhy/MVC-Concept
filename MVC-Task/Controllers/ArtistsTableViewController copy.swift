@@ -43,6 +43,13 @@ class ArtistsTableViewController: UITableViewController {
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let artistWork = storyBoard.instantiateViewController(identifier: "detailedTableViewController") as! detailedTableViewController
+        let worksData =  artistsData[indexPath.row].works
+        artistWork.workArtistsData = worksData
+        self.present(artistWork, animated: true, completion: nil)
+    }
     
     
     
